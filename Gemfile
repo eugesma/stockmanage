@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# Bootstrap style to will_paginate 
+gem 'will_paginate-bootstrap4'
+# To paginate
+gem 'will_paginate', '~> 3.1.0'
 # To full text search
 gem 'pg_search'
 # For filter objects
