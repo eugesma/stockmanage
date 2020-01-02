@@ -3,7 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
-# To style select
+# To full text search
+gem 'pg_search'
+# For filter objects
+gem 'filterrific'
+# To style select 
 gem 'bootstrap-select-rails'
 # To nested forms
 gem "cocoon"
