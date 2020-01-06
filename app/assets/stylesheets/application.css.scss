@@ -18,3 +18,11 @@
  @import 'bootstrap-select';
  @import 'font_awesome5.css';
  @import "simple-sidebar.css";
+
+
+ #flash_messages{
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  z-index: 1;
+}
