@@ -1,0 +1,23 @@
+<!-- Sidebar -->
+<div class="bg-light border-right navbar-light" id="sidebar-wrapper">
+  <!--Brand-->
+  <div class="sidebar-heading d-flex justify-content-between">    
+    <%= link_to root_path, data: { turbolinks: false }, class: "navbar-brand #{active_class('welcome')}" do %>
+      <%= image_tag("LogoStockManage.svg", size: "50x50", alt: "Logo Lighuen", class: 'logo') %>
+      stockmanage
+    <% end %>
+
+    <button class="btn btn-light" id="menu-toggle"><%= fa_icon "bars" %></button>
+  </div>
+
+
+  <!--Menu list-->
+  <div class="list-group list-group-flush">
+    <%= link_to root_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('welcome')}" do %>
+      <span class="sb-icon">
+        <%= fa_icon "home" %> 
+      </span>
+      <span class="sb-title">Inicio</span>
+    <% end %>
+  </div>
+</div>

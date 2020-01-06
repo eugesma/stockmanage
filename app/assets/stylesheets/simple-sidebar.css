@@ -1,0 +1,95 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .3s ease-out .1s;
+  -moz-transition: margin .3s ease-out .1s;
+  -o-transition: margin .3s ease-out .1s;
+  transition: margin .3s ease-out .1s;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 17.5rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.list-custom.active{
+  border-color: lightgray!important;
+  background-color: lightgray!important;
+  color: black!important;
+}
+
+#sidebar-wrapper .list-group .list-group-item{
+  position: relative;
+  padding: 12px 0;
+  left: 0;
+  transition: left .3s ease-out .1s;
+}
+
+#sidebar-wrapper .list-group .list-group-item .sb-icon{
+  position: absolute;
+  left: 1.25rem;
+  transition: left .3s ease-out .1s;
+}
+
+#sidebar-wrapper .list-group .list-group-item .sb-title{
+  margin-left: calc(1.25rem + 30px);
+  opacity: 1;
+  transition: opacity .15s ease-in;
+}
+
+#wrapper.toggled #sidebar-wrapper .list-group .list-group-item .sb-icon{
+  left: calc(17.5rem - 1.75rem);
+}
+
+#wrapper.toggled #sidebar-wrapper .list-group .list-group-item .sb-title{
+  opacity: 0;
+}
+
+/* on hover each item on toggled sidebar */
+#wrapper.toggled #sidebar-wrapper .list-group .list-group-item:hover{
+  left: 15rem;
+}
+
+#wrapper.toggled #sidebar-wrapper .list-group .list-group-item:hover .sb-icon{
+  left: .75rem;
+}
+
+#wrapper.toggled #sidebar-wrapper .list-group .list-group-item:hover .sb-title{
+  opacity: 1;
+}
