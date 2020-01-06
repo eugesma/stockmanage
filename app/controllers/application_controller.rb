@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   # You want to get exceptions in development, but not in production.
-  #unless Rails.application.config.consider_all_requests_local
+  unless Rails.application.config.consider_all_requests_local
     rescue_from ActionController::UnknownController, with: -> { render_404  }
     rescue_from ActiveRecord::RecordNotFound,        with: -> { render_404  }
-  #end
+  end
 
   def render_404
     respond_to do |format|
