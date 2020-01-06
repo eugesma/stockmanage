@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# To users
+gem 'devise'
+# To authorize user
+gem "pundit"
 # Bootstrap style to will_paginate 
 gem 'will_paginate-bootstrap4'
 # To paginate
@@ -65,6 +69,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  # To debug errors
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

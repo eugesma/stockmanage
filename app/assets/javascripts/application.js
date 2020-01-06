@@ -14,6 +14,7 @@
 //= require popper
 //= require bootstrap
 //= require bootstrap-select
+//= require font_awesome5
 //= require cocoon
 //= require rails-ujs
 //= require activestorage
