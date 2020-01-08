@@ -1,6 +1,6 @@
 ---
-Nombre: '' 
-Descripción: '' 
+name: '' 
+about: '' 
 
 ---
 
