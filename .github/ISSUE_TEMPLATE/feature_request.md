@@ -1,6 +1,6 @@
 ---
 Nombre: ABM Productos 
-Descripción: 'Crear alta baja y modificacin de productos' 
+Descripción: Crear alta baja y modificacin de productos 
 
 ---
 
