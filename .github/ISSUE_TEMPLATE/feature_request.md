@@ -1,6 +1,6 @@
 ---
-Nombre: '' 
-Descripción: '' 
+Nombre: ABM Productos 
+Descripción: 'Crear alta baja y modificacin de productos' 
 
 ---
 
