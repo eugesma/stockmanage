@@ -6,14 +6,14 @@ labels: enhancement
 assignees: ''
 ---
 
-**Problemática:**
-Una descripcin clara de cuál es el problema a solucionar o mejora que se necesita.
+### Mejora:
+Una descripcin clara de cuál es la mejora que se necesita.
 
-**Solución:**
+### Solución:
 Una descripción clara y concisa de qué te gustaría que pase.
 
-**Alternativas:**
+### Alternativas:
 Una descripción clara y concisa de cualquier solución alternativa o mejora que hayas considerado.
 
-**Adicional:**
+### Adicional:
 Agregar contexto o imágenes del asunto aquí.
