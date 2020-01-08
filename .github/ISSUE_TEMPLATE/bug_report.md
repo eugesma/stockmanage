@@ -7,20 +7,20 @@ assignees: ''
 
 ---
 
-**Descripción del bug**
+**Descripción del bug:**
 Una clara y concisa descripción de cuál es el bug.
 
-**Para reproducir**
+**Para reproducir:**
 Pasos para reproducir el comportamiento:
 1. Ir a '...'
 2. Click en '....'
 3. Scroll down a '....'
 4. Ver error
 
-**Comportamiento esperado**
+**Comportamiento esperado:**
 Una clara y concisa descripción de que esperas que ocurra.
 
-**Imágenes**
+**Imágenes:**
 Si aplica, agregar imágenes para ayudar a explicar tu problema.
 
 **PC escritorio (completar la siguiente información):**
@@ -34,5 +34,5 @@ Si aplica, agregar imágenes para ayudar a explicar tu problema.
  - Navegador [e.g. stock browser, safari]
  - Versión [e.g. 22]
 
-**Contexto adicional**
+**Contexto adicional:**
 Agregar cualquier otro contexto acerca del problema aquí.
