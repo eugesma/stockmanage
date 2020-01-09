@@ -1,24 +1,8 @@
-# README
+# ![image](https://github.com/eugesma/stockmanage/blob/master/app/assets/images/LogoStockManage.png?raw=true)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stockmanage is a RoR web responsive application to manage everything related to sales and stock.
 
-Things you may want to cover:
+### Requisites:
+* [Ruby version 2.6.5](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-18-04)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* [PostgreSQL 10](https://www.digitalocean.com/community/tutorials/como-instalar-y-utilizar-postgresql-en-ubuntu-18-04-es)
