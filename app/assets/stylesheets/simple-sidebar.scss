@@ -19,6 +19,16 @@ body {
 #sidebar-wrapper .sidebar-heading {
   padding: 0.5rem 0 0.5rem 1.25rem;
   font-size: 1.2rem;
+  height: 50px;
+  .navbar-brand{
+    padding: 0;
+    margin: 0;
+    height: calc(50px - 1rem);
+    img{
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
 #sidebar-wrapper .list-group {
