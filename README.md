@@ -37,9 +37,9 @@ $ sudo apt-get install nodejs
 ```
 [Create database and user](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e) and then 
 ```sh
-bin/rake db:migrate
+$ bin/rake db:migrate
 ```
 Finally
 ```sh
-bin/rails s
+$ bin/rails s
 ```
