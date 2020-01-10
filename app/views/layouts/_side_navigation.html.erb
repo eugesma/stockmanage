@@ -2,14 +2,13 @@
 <div class="bg-light border-right navbar-light" id="sidebar-wrapper">
   <!--Brand-->
   <div class="sidebar-heading d-flex justify-content-between">    
-    <%= link_to root_path, data: { turbolinks: false }, class: "navbar-brand #{active_class('welcome')}" do %>
+    <%= link_to root_path, data: { turbolinks: false }, class: "navbar-brand d-flex align-item-center #{active_class('welcome')}" do %>
       <%= image_tag("LogoStockManage.svg", size: "50x50", alt: "Logo Lighuen", class: 'logo') %>
       stockmanage
     <% end %>
 
     <button class="btn btn-light" id="menu-toggle"><%= fa_icon "bars" %></button>
   </div>
-
 
   <!--Menu list-->
   <div class="list-group list-group-flush">
@@ -18,6 +17,20 @@
         <%= fa_icon "home" %> 
       </span>
       <span class="sb-title">Inicio</span>
+    <% end %>
+    
+    <%= link_to products_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('products')}" do %>
+      <span class="sb-icon">
+        <%= fa_icon "list" %> 
+      </span>
+      <span class="sb-title">Productos</span>
+    <% end %>
+
+    <%= link_to stores_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('stores')}" do %>
+      <span class="sb-icon">
+        <%= fa_icon "store-alt" %>
+      </span>
+      <span class="sb-title">Tiendas</span>
     <% end %>
   </div>
 </div>

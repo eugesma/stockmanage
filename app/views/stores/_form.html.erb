@@ -1,0 +1,29 @@
+
+<%= simple_form_for(@store) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%# Name %>
+    <%= f.input :name, label: "Nombre" %>
+
+    <%# Store type %>
+    <div class="form-group">
+      <label class="form-control-label">Tipo</label>
+      <%= f.collection_select :store_type_id, @store_types, :id, :name, {} , 
+        { class: "selectpicker form-control", size: 6, :data => {width: "100%"},
+        "title"=>"Seleccionar tipo",
+        }
+      %>
+    </div>
+
+    <%# CUIT %>
+    <%= f.input :cuit, label: "CUIT" %>
+
+    <%# Address %>
+    <%= f.input :address, label: "Domicilio" %>
+
+    <%# Description %>
+    <%= f.input :description, label: "Descripción" %>
+  </div>
+<% end %>
