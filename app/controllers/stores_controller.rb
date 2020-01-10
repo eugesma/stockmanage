@@ -8,9 +8,6 @@ class StoresController < ApplicationController
     @filterrific = initialize_filterrific(
       Store,
       params[:filterrific],
-      select_options: {
-        with_status: Store.options_for_status
-      },
       persistence_id: false,
       default_filter_params: {sorted_by: 'created_at_desc'},
       available_filters: [

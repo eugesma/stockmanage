@@ -1,6 +1,24 @@
-<h1>Editing Client</h1>
+<%= render "header" %>
 
-<%= render 'form', client: @client %>
-
-<%= link_to 'Show', @client %> |
-<%= link_to 'Back', clients_path %>
+<div class="row">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-header bg-warning">        
+        <h5 class="title">
+          <%= fa_icon "edit" %> Editando cliente
+        </h5>
+      </div>
+      <div class="card-body">
+        <%= render 'form', client: @client %>
+      </div> 
+      <div class="card-footer text-right">
+        <%= link_to clients_path, class: "btn btn-light mr-1" do %>
+          Volver
+        <% end %>
+        <button type='submit' name='commit' class='btn btn-warning mr-1' form='edit_client_<%= @client.id %>' value='Guardar'>
+          <%= fa_icon "save" %> Guardar cambios
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

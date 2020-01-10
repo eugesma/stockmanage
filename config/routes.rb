@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  resources :clients
   root 'welcome#index'
   
   # Users
   devise_for :users
   
+  resources :clients do
+    member do
+      get "delete"
+    end
+  end
+
   # Stores
   resources :stores do
     member do

@@ -1,34 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%= render "header" %>
 
-<p>
-  <strong>Store:</strong>
-  <%= @client.store %>
-</p>
+<div class="row">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-header bg-secondary text-white">        
+        <h5 class="title">
+          <%= fa_icon "eye" %> Viendo cliente
+        </h5>
+      </div>
+      <div class="card-body fixed-panel-store">
+        <p>
+          <strong>Nombre y apellido:</strong>
+          <%= @client.fullname %>
+        </p>
 
-<p>
-  <strong>Fullname:</strong>
-  <%= @client.fullname %>
-</p>
+        <p>
+          <strong>Dni:</strong>
+          <%= @client.dni %>
+        </p>
 
-<p>
-  <strong>Dni:</strong>
-  <%= @client.dni %>
-</p>
+        <p>
+          <strong>CUIT:</strong>
+          <%= @client.cuit %>
+        </p>
 
-<p>
-  <strong>Cuit:</strong>
-  <%= @client.cuit %>
-</p>
+        <p>
+          <strong>Teléfono:</strong>
+          <%= @client.phone %>
+        </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @client.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+        <p>
+          <strong>Email:</strong>
+          <%= @client.email %>
+        </p>
+      </div> 
+      <div class="card-footer text-right">
+        <%= link_to clients_path, class: "btn btn-light mr-1" do %>
+          Volver
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
