@@ -1,0 +1,12 @@
+---
+es:
+  activerecord:
+    models:
+      product: Productos
+    attributes:
+      product:
+        name: Nombre
+        code: Código
+        cost_price: Precio costo
+        sale_price: Precio venta
+        store_price: Precio tienda
