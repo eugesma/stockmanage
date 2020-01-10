@@ -10,12 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_155258) do
+ActiveRecord::Schema.define(version: 2020_01_10_204931) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_trgm"
   enable_extension "plpgsql"
-  enable_extension "unaccent"
 
   create_table "client_types", force: :cascade do |t|
     t.string "name"
@@ -80,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_155258) do
     t.bigint "store_type_id"
     t.integer "users_count", default: 0
     t.bigint "client_type_id"
+    t.integer "clients_count", default: 0
     t.index ["client_type_id"], name: "index_stores_on_client_type_id"
     t.index ["store_type_id"], name: "index_stores_on_store_type_id"
   end
