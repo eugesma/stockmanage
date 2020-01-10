@@ -7,10 +7,5 @@ class CreateStoreTypes < ActiveRecord::Migration[5.2]
     end
     
     add_reference :stores, :store_type, foreign_key: true
-
-    StoreType.create([
-      {name: "Kiosco"},
-      {name: "Almacén"}
-    ])
   end
 end
