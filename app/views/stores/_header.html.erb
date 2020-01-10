@@ -1,10 +1,13 @@
 <% content_for :page_header do %>
+  <%# Stores %>
   <li class="nav-item <%= active_action('index') %>">
     <%= link_to stores_path, class: "nav-link" do %>
       <%= fa_icon "store-alt" %>
       Tiendas
     <% end %>
   </li>
+
+  <%# New %>
   <li class="nav-item <%= active_action('new') %>">
     <%= link_to new_store_path, class: "nav-link text-primary" do %>
       <%= fa_icon "plus" %>

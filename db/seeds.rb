@@ -11,3 +11,8 @@ User.create([
   { email: "paul.18.sma@gmail.com", password: '12345678' }
 ])
 
+User.first.add_role :admin
+User.first.save
+User.second.add_role :admin
+User.second.save
+
