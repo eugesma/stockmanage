@@ -35,7 +35,11 @@ Install NodeJs
 ```sh
 $ sudo apt-get install nodejs
 ```
-[Create database and user](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e) and then 
+[Create database and user](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e)
+
+[Create pg_trgm and unaccent extensions](https://severalnines.com/database-blog/creating-new-modules-using-postgresql-create-extension)
+
+Run migrations
 ```sh
 $ bin/rake db:migrate
 ```
