@@ -1,0 +1,59 @@
+<!--Listado-->
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-3">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-5">
+          <h5 class="title">
+            <%= fa_icon "store-alt" %> Tiendas
+          </h5>
+          </div>
+          <div class="col-md-1"><%= render_filterrific_spinner %></div>
+          <div class="col-md-6">
+            <%= form_for_filterrific @filterrific do |f| %>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <%= f.select(:with_status,
+                      @filterrific.select_options[:with_status].map {
+                        |status| [status.first, status.second, data: {'content': "<span class='badge badge-"+status.third+"'>"+status.first+"</span>"}]
+                      },{},
+                      { class: "selectpicker-md show-tick", "data-width"=>"100%"}) %>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <%= f.text_field(
+                      :search_code,
+                      class: 'filterrific-periodically-observed form-control border',
+                      placeholder: 'Código',
+                      autocomplete: 'off',
+                      ) %>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <%= f.text_field(
+                      :search,
+                      class: 'filterrific-periodically-observed form-control',
+                      placeholder: 'Cliente',
+                      autocomplete: 'off',
+                      ) %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="card-body" id="works-list">
+        <%= render(
+          partial: 'works/list',
+          locals: { works: @works }
+        ) %>
+      </div>
+    </div>
+    <%= will_paginate @works, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
+</div>
