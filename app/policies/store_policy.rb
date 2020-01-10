@@ -28,7 +28,7 @@ class StorePolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.has_any_role?(:admin, :vendedor)
+    user.has_any_role?(:admin)
   end
 
   def delete?

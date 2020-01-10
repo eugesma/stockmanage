@@ -2,12 +2,15 @@ class Store < ApplicationRecord
   include PgSearch::Model
   
   # Relations
-  belongs_to :store_type_id
+  belongs_to :store_type
   has_many :store_users, inverse_of: :store
   has_many :users, :through => :store_users
 
   # Validations
   validates_presence_of :name, :cuit, :address
+
+  # Delegations
+  delegate :name, to: :store_type, prefix: true
 
   filterrific(
     default_filter_params: { sorted_by: 'created_at_desc' },

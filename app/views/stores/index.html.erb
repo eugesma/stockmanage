@@ -1,13 +1,15 @@
+<%= render "header"%>
 <!--Listado-->
 <div class="row">
   <div class="col-12">
     <div class="card mb-3">
-      <div class="card-header">
+      <div class="card-header info">
         <div class="row">
           <div class="col-md-5">
-          <h5 class="title">
-            <%= fa_icon "store-alt" %> Tiendas
-          </h5>
+              <div class="pb-2 mt-4 mb-2 border-bottom">
+                <%= fa_icon "store-alt" %>
+                Tiendas
+              </div>
           </div>
           <div class="col-md-1"><%= render_filterrific_spinner %></div>
           <div class="col-md-6">
@@ -15,29 +17,10 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="input-group">
-                    <%= f.select(:with_status,
-                      @filterrific.select_options[:with_status].map {
-                        |status| [status.first, status.second, data: {'content': "<span class='badge badge-"+status.third+"'>"+status.first+"</span>"}]
-                      },{},
-                      { class: "selectpicker-md show-tick", "data-width"=>"100%"}) %>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="input-group">
-                    <%= f.text_field(
-                      :search_code,
-                      class: 'filterrific-periodically-observed form-control border',
-                      placeholder: 'Código',
-                      autocomplete: 'off',
-                      ) %>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="input-group">
                     <%= f.text_field(
                       :search,
-                      class: 'filterrific-periodically-observed form-control',
-                      placeholder: 'Cliente',
+                      class: 'filterrific-periodically-observed form-control border',
+                      placeholder: 'Nombre',
                       autocomplete: 'off',
                       ) %>
                   </div>
@@ -47,13 +30,13 @@
           </div>
         </div>
       </div>
-      <div class="card-body" id="works-list">
+      <div class="card-body" id="stores-list">
         <%= render(
-          partial: 'works/list',
-          locals: { works: @works }
+          partial: 'stores/list',
+          locals: { stores: @stores }
         ) %>
       </div>
     </div>
-    <%= will_paginate @works, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    <%= will_paginate @stores, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
   </div>
 </div>
