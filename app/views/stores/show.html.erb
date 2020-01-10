@@ -1,0 +1,44 @@
+<%= render "header" %>
+
+<div class="row">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-header bg-secondary text-white">        
+        <h5 class="title">
+          <%= fa_icon "eye" %> Viendo tienda
+        </h5>
+      </div>
+      <div class="card-body fixed-panel-store">
+        <p>
+          <strong>Nombre:</strong>
+          <%= @store.name %>
+        </p>
+
+        <p>
+          <strong>CUIT:</strong>
+          <%= @store.cuit %>
+        </p>
+
+        <p>
+          <strong>Domicilio:</strong>
+          <%= @store.address %>
+        </p>
+
+        <p>
+          <strong>Descripción:</strong>
+          <%= @store.description %>
+        </p>
+
+        <p>
+          <strong>Tipo:</strong>
+          <%= @store.store_type_name %>
+        </p>
+      </div> 
+      <div class="card-footer text-right">
+        <%= link_to stores_path, class: "btn btn-light mr-1" do %>
+          Volver
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
