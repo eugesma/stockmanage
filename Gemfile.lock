@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 31c0605dd778f2a6eedd74c9e385d136548c09d6
+  branch: master
+  specs:
+    faker (2.10.0)
+      i18n (>= 1.6, < 1.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -289,6 +297,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   devise
+  faker!
   filterrific
   font_awesome5_rails
   jbuilder (~> 2.5)
