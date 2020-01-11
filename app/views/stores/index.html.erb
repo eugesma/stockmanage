@@ -1,0 +1,48 @@
+<%= render "header"%>
+<!--Listado-->
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-3">
+      <div class="card-header info">
+        <div class="row">
+          <div class="col-5">
+            <div class="pb-2 mb-2 border-bottom">
+              <%= fa_icon "store-alt" %>
+              Tiendas
+            </div>
+          </div>
+          <div class="col-1"><%= render_filterrific_spinner %></div>
+          <div class="col-6">
+            <%= form_for_filterrific @filterrific do |f| %>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <%= f.text_field(
+                      :search,
+                      class: 'form-control border',
+                      placeholder: 'Nombre',
+                      autocomplete: 'off',
+                      ) %>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <%= button_tag type: 'submit', class: "btn btn-info", id: "register-button", title: 'Filtrar', 
+                    data: { toggle: 'tooltip', placement: 'top' }, 'data-disable-with' => "<i class='fa fa-spinner fa-spin'></i>".html_safe do %>
+                    <%= fa_icon "filter" %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="card-body" id="stores-list">
+        <%= render(
+          partial: 'stores/list',
+          locals: { stores: @stores }
+        ) %>
+      </div>
+    </div>
+    <%= will_paginate @stores, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
+</div>

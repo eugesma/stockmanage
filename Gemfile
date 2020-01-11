@@ -5,6 +5,8 @@ ruby '2.6.5'
 
 # To users
 gem 'devise'
+# To roles
+gem "rolify"
 # To authorize user
 gem "pundit"
 # Bootstrap style to will_paginate 

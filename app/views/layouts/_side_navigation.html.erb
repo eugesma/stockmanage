@@ -19,11 +19,18 @@
       <span class="sb-title">Inicio</span>
     <% end %>
     
-    <%= link_to products_path, class: "list-group-item list-group-item-action list-custom bg-light" do %>
+    <%= link_to products_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('products')}" do %>
       <span class="sb-icon">
         <%= fa_icon "list" %> 
       </span>
       <span class="sb-title text-capitalize"><%= Product.model_name.human(count: 2) %></span>
+    <% end %>
+
+    <%= link_to stores_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('stores')}" do %>
+      <span class="sb-icon">
+        <%= fa_icon "store-alt" %>
+      </span>
+      <span class="sb-title">Tiendas</span>
     <% end %>
   </div>
 </div>

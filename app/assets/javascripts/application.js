@@ -28,6 +28,16 @@ window.setTimeout(function () {
   });
 }, 5000);
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+$(document).on('turbolinks:load', function () {
+  window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove();
+    });
+  }, 5000);
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+
+  $('.selectpicker').selectpicker({ dropupAuto: false });
+});
