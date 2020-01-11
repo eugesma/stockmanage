@@ -1,0 +1,42 @@
+
+<% if  defined?(object) and object.class.is_a?(Class) %>
+
+    <div class="d-flex justify-content-end">
+        <!-- Mostrar -->
+        <% if defined?(show) and show %>
+        
+            <%= link_to send("#{object.class.name.downcase}_path", object), 
+                class: 'btn btn-sm btn-secondary mr-1 ml-1', 
+                title: t("actions.tooltip.show"), 
+                data: { toggle: 'tooltip', placement: 'top' } do %>
+                
+                <%= fa_icon "eye" %>
+            <% end %>
+
+        <% end %>
+
+        <!-- Editar -->
+        <% if defined?(edit) and edit %>
+            <%= link_to send("edit_#{object.class.name.downcase}_path", object), 
+                class: 'btn btn-sm btn-warning mr-1 ml-1', 
+                title: t("actions.tooltip.edit"), 
+                data: { toggle: 'tooltip', placement: 'top'} do %> 
+
+                <%= fa_icon "pen" %>
+            <% end %>
+        <% end %>
+
+        <!-- Eliminar -->
+        <% if defined?(destroy) and destroy %>
+            <%= link_to send("#{object.class.name.downcase}_path", object), 
+                method: 'delete', 
+                class: 'btn btn-sm btn-danger mr-1 ml-1', 
+                remote: true, 
+                title: t("actions.tooltip.delete"), 
+                data: { toggle: 'tooltip', placement: 'top', confirm: "Are you sure?" } do %>
+
+                <%= fa_icon "trash" %> 
+            <% end %>    
+        <% end %>
+    </div>
+<% end %>
