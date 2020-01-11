@@ -27,3 +27,7 @@ window.setTimeout(function () {
     $(this).remove();
   });
 }, 5000);
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
