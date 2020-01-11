@@ -2,7 +2,9 @@
 es:
   activerecord:
     models:
-      product: Productos
+      product:
+        one: producto
+        other: productos
     attributes:
       product:
         name: Nombre
