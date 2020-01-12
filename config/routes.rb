@@ -7,9 +7,6 @@ Rails.application.routes.draw do
     
     #Products
     resources :products
-    
-    #Users
-    devise_for :users
 
     # Stores
     resources :stores do
