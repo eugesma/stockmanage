@@ -1,0 +1,41 @@
+<tr id="product_<%= product.id %>">  
+  <!-- Nombre -->
+  <td>
+    <%= product.name %>
+  </td>
+
+  <!-- Código -->
+  <td>
+    <%= product.code %>
+  </td>
+  
+  <!-- Precio costo -->
+  <td>
+    <%= product.cost_price %>
+  </td>
+  
+  <!-- Precio venta -->
+  <td>
+    <%= product.sale_price %>
+  </td>
+  
+  <!-- Precio tienda -->
+  <td>
+    <%= product.store_price %>
+  </td>
+  
+
+  <!-- botones de acción -->
+  <td class="mx-auto">
+    <%= render(
+            partial: 'shared/action_buttons',
+            locals:{ 
+                object: product, 
+                show: true, 
+                edit: true, 
+                destroy: true
+            }
+        ) 
+    %>
+  </td>
+</tr>

@@ -1,0 +1,30 @@
+<%# <%= render "header" %>
+
+<% content_for :container do %>-fluid<% end %>
+
+<!--Listado-->
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-3">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-8">
+            <h5 class="title text-capitalize">
+              <%= Product.model_name.human(count: 2) %>
+            </h5>
+          </div>
+          <div class="col-md-4 text-right">
+              <%= link_to t('actions.add', model: Product.model_name.human), new_product_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+      <div class="card-body" id="products-list">
+        <%= render(
+          partial: 'products/list',
+          locals: { products: @products }
+        ) %>
+      </div>
+    </div>
+    <%= will_paginate @products, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
+</div>

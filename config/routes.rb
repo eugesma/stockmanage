@@ -1,17 +1,24 @@
 Rails.application.routes.draw do
-  resources :clients
-  root 'welcome#index'
+  scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
+    root 'welcome#index'
   
-  # Users
-  devise_for :users
-  
-  # Stores
-  resources :stores do
-    member do
-      get "delete"
+    # Users
+    devise_for :users
+    
+    #Products
+    resources :products
+    
+    #Users
+    devise_for :users
+
+    # Stores
+    resources :stores do
+      member do
+        get "delete"
+      end
     end
-  end
   
-  # Products
-  resources :products
+    # Clients
+    resources :clients
+  end
 end
