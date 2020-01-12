@@ -39,3 +39,10 @@ Store.create([
     { fullname: Faker::TvShows::GameOfThrones.character, email: Faker::Internet.email, store: Store.second }
   ])
 }
+
+Product.create([
+  {name: "Coca-Cola", code: "0830-1", cost_price: 30.45, sale_price: 60.30, store_price: 78.45},
+  {name: "Pepsi", code: "0831-1", cost_price: 31.45, sale_price: 61.30, store_price: 79.45},
+  {name: "Fanta", code: "0832-1", cost_price: 32.45, sale_price: 62.30, store_price: 79.99},
+  {name: "Sprite", code: "0833-1", cost_price: 30.45, sale_price: 60.30, store_price: 78.45}
+])

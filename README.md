@@ -1,24 +1,49 @@
-# README
+![image](https://github.com/eugesma/stockmanage/blob/master/app/assets/images/LogoStockManage.png?raw=true)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stockmanage is a RoR web responsive application to manage everything related to sales and stock.
+#
 
-Things you may want to cover:
+### Requisites:
+* [Ruby version 2.6.5](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-18-04)
 
-* Ruby version
+* [PostgreSQL 10](https://www.digitalocean.com/community/tutorials/como-instalar-y-utilizar-postgresql-en-ubuntu-18-04-es)
+#
+### Setup development:
+Clone the repo...
+```sh
+$ git clone https://github.com/eugesma/stockmanage.git
+```
+Set ruby version
+```sh
+$ cd stockmanage
+$ echo "ruby-2.6.5" > .ruby-version
+$ echo "stockmanage" > .ruby-gemset
+```
+Install gems and dependencies
+```sh
+$ bundle install
+```
+If raise the following error
+> An error occurred while installing pg (1.2.1), and Bundler cannot continue.
 
-* System dependencies
+Try:
+```sh
+$ sudo apt-get install libpq-dev
+$ bundle install
+```
+Install NodeJs
+```sh
+$ sudo apt-get install nodejs
+```
+[Create database and user](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e)
 
-* Configuration
+[Create pg_trgm and unaccent extensions](https://severalnines.com/database-blog/creating-new-modules-using-postgresql-create-extension)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run migrations
+```sh
+$ bin/rake db:migrate
+```
+Finally
+```sh
+$ bin/rails s
+```
