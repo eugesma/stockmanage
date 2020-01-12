@@ -5,6 +5,7 @@ class Store < ApplicationRecord
   belongs_to :store_type
   has_many :store_users, inverse_of: :store
   has_many :users, :through => :store_users
+  has_many :clients
 
   # Validations
   validates_presence_of :name, :cuit, :address
