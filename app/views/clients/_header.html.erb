@@ -1,0 +1,17 @@
+<% content_for :page_header do %>
+  <%# Clients %>
+  <li class="nav-item <%= active_action('index') %>">
+    <%= link_to clients_path, class: "nav-link" do %>
+      <%= fa_icon "address-card" %>
+      Clientes
+    <% end %>
+  </li>
+
+  <%# New %>
+  <li class="nav-item <%= active_action('new') %>">
+    <%= link_to new_client_path, class: "nav-link text-primary" do %>
+      <%= fa_icon "plus" %>
+      Nuevo
+    <% end %>
+  </li>
+<% end %>

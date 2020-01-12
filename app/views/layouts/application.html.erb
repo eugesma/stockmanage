@@ -8,6 +8,18 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <style>
+    @media (max-width: 769px) {
+      body {
+        background-color: #1a2849;
+      }
+    }
+    @media (min-width: 769px) {
+      body {
+        background-image: url("<%= asset_path('stockmanage-bg.jpg') %>");
+      }
+    }
+  </style>
 
   <body>
     <div class="d-flex" id="wrapper">

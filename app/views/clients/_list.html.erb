@@ -1,0 +1,22 @@
+<div id="filterrific_results">
+  <div class="card">
+    <table class="table table-hover table-sm">
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Email</th>
+          <th>Compras</th>
+          <th>Creado <%= fa_icon "calendar" %></th>
+          <th>Modificado <%= fa_icon "calendar" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="clients">
+        <%= render @clients %>
+      </tbody>
+    </table>
+  </div>
+  <div id="page_links">
+    <%= will_paginate @clients, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
+</div>

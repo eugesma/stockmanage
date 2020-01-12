@@ -5,17 +5,17 @@
     <div class="card">
       <div class="card-header bg-warning">        
         <h5 class="title">
-          <%= fa_icon "plus" %> Editar tienda
+          <%= fa_icon "edit" %> Editando tienda
         </h5>
       </div>
-      <div class="card-body fixed-panel-store">
+      <div class="card-body">
         <%= render 'form', store: @store %>
       </div> 
       <div class="card-footer text-right">
         <%= link_to stores_path, class: "btn btn-light mr-1" do %>
           Volver
         <% end %>
-        <button type='submit' name='commit' class='btn btn-primary mr-1' form='edit_store_<%= @store.id %>' value='Guardar'>
+        <button type='submit' name='commit' class='btn btn-warning mr-1' form='edit_store_<%= @store.id %>' value='Guardar'>
           <%= fa_icon "save" %> Guardar cambios
         </button>
       </div>

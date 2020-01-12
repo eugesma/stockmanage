@@ -26,6 +26,13 @@
       <span class="sb-title text-capitalize"><%= Product.model_name.human(count: 2) %></span>
     <% end %>
 
+    <%= link_to clients_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('clients')}" do %>
+      <span class="sb-icon">
+        <%= fa_icon "address-card" %>
+      </span>
+      <span class="sb-title">Clientes</span>
+    <% end %>
+
     <%= link_to stores_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('stores')}" do %>
       <span class="sb-icon">
         <%= fa_icon "store-alt" %>

@@ -1,0 +1,58 @@
+<tr id="client_<%= client.id %>">
+  <!-- client: fullname -->
+  <td>
+    <%= client.fullname %>
+  </td>
+  
+  <!-- client: email -->
+  <td>
+    <span class="badge badge-secondary">
+      <%= client.email %>
+    </span>
+  </td>
+
+  <!-- client: client count -->
+  <td>
+    <span class="badge badge-info">
+      0
+    </span>
+  </td>
+
+  <!-- client: created at -->
+  <td>
+    <%= client.created_at.strftime("%d/%m/%y") %>
+  </td>
+
+  <!-- client: updated at -->
+  <td>
+    <%= client.created_at.strftime("%d/%m/%y") %>
+  </td>
+
+  <!-- Action buttons -->
+  <td class="mx-auto">
+    <div class="d-flex justify-content-end">
+      <!-- Show -->
+      <% if policy(client).show? %>
+        <%= link_to client_path(client), class: 'btn btn-sm btn-secondary mr-1 ml-1', 
+          title: 'Ver', data: { toggle: 'tooltip', placement: 'top' } do %>
+          <%= fa_icon "eye" %>
+        <% end %>
+      <% end %>
+
+      <!-- Edit -->
+      <% if policy(client).edit? %>
+        <%= link_to edit_client_path(client), class: 'btn btn-sm btn-warning mr-1 ml-1', title: 'Editar', data: { toggle: 'tooltip', placement: 'top'} do %>
+          <%= fa_icon "pen" %>
+        <% end %>
+      <% end %>
+
+      <!-- Delete -->
+      <% if policy(client).destroy? %>
+        <%= link_to delete_client_path(client), remote: true, class: 'btn btn-sm btn-danger mr-1 ml-1',
+        title: 'Eliminar', data: { toggle: 'tooltip', placement: 'top' } do %>
+          <%= fa_icon "trash" %>
+        <% end %>
+      <% end %>
+    </div>
+  </td>
+</tr>

@@ -39,14 +39,4 @@ class Store < ApplicationRecord
       raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
   }
-
-  def self.options_for_status
-    [
-      ['Todos', '', 'secondary'],
-      ['Pendiente', 0, 'warning'],
-      ['En proceso', 1, 'info'],
-      ['Terminado', 2, 'primary'],
-      ['Entregado', 3, 'success'],
-    ]
-  end
 end

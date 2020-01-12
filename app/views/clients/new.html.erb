@@ -1,5 +1,24 @@
-<h1>New Client</h1>
+<%= render "header" %>
 
-<%= render 'form', client: @client %>
-
-<%= link_to 'Back', clients_path %>
+<div class="row">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-header bg-primary text-white">        
+        <h5 class="title">
+          <%= fa_icon "plus" %> Nuevo cliente
+        </h5>
+      </div>
+      <div class="card-body">
+        <%= render 'form', client: @client %>
+      </div> 
+      <div class="card-footer text-right">
+        <%= link_to clients_path, class: "btn btn-light mr-1" do %>
+          Volver
+        <% end %>
+        <button type='submit' name='commit' class='btn btn-primary mr-1' form='new_client' value='Crear'>
+          <%= fa_icon "check" %> Crear
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
