@@ -1,11 +1,8 @@
-class Store < ApplicationRecord
+class Client < ApplicationRecord
   include PgSearch::Model
   
   # Relations
-  belongs_to :store_type
-  has_many :store_users, inverse_of: :store
-  has_many :users, :through => :store_users
-  has_many :clients
+  belongs_to :store
 
   # Validations
   validates_presence_of :name, :cuit, :address
@@ -23,7 +20,7 @@ class Store < ApplicationRecord
   
   # Scopes
   pg_search_scope :search,
-    against: [:name],
+    against: [:fullname],
     :using => { :tsearch => {:prefix => true} }, # Buscar coincidencia desde las primeras letras.
     :ignoring => :accents # Ignorar tildes.
 
@@ -33,7 +30,7 @@ class Store < ApplicationRecord
     case sort_option.to_s
     when /^created_at_/s
       # Ordenamiento por fecha de creación
-      order("stores.created_at #{ direction }")
+      order("clients.created_at #{ direction }")
     else
       # Si no existe la opcion de ordenamiento se levanta la excepcion
       raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")

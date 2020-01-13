@@ -1,0 +1,49 @@
+<% content_for :container do %>-fluid<% end %>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-3">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-8">
+            <h5 class="title text-capitalize">
+              <%= t('actions.edit' , model: Product.model_name.human) %>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>
+          <strong>Name:</strong>
+          <%= @product.name %>
+        </p>
+
+        <p>
+          <strong>Code:</strong>
+          <%= @product.code %>
+        </p>
+
+        <p>
+          <strong>Cost price:</strong>
+          <%= @product.cost_price %>
+        </p>
+
+        <p>
+          <strong>Sale price:</strong>
+          <%= @product.sale_price %>
+        </p>
+
+        <p>
+          <strong>Store price:</strong>
+          <%= @product.store_price %>
+        </p>
+
+      </div>
+      
+      <div class="card-footer text-right">
+        <%= link_to t('actions.back'), products_path, class: "btn btn-info" %>
+        <%= link_to t('actions.tooltip.edit'), edit_product_path(@product), class: "btn btn-warning" %>
+      </div>
+    </div>
+  </div>
+</div>

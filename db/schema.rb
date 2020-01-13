@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_012314) do
+ActiveRecord::Schema.define(version: 2020_01_10_204931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "client_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.bigint "store_id"
+    t.string "fullname"
+    t.string "dni"
+    t.string "cuit"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_clients_on_store_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -59,6 +77,9 @@ ActiveRecord::Schema.define(version: 2020_01_10_012314) do
     t.datetime "updated_at", null: false
     t.bigint "store_type_id"
     t.integer "users_count", default: 0
+    t.bigint "client_type_id"
+    t.integer "clients_count", default: 0
+    t.index ["client_type_id"], name: "index_stores_on_client_type_id"
     t.index ["store_type_id"], name: "index_stores_on_store_type_id"
   end
 
@@ -82,7 +103,9 @@ ActiveRecord::Schema.define(version: 2020_01_10_012314) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "clients", "stores"
   add_foreign_key "store_users", "stores"
   add_foreign_key "store_users", "users"
+  add_foreign_key "stores", "client_types"
   add_foreign_key "stores", "store_types"
 end

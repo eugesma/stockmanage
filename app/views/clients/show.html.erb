@@ -1,0 +1,44 @@
+<%= render "header" %>
+
+<div class="row">
+  <div class="col-6 mx-auto">
+    <div class="card">
+      <div class="card-header bg-secondary text-white">        
+        <h5 class="title">
+          <%= fa_icon "eye" %> Viendo cliente
+        </h5>
+      </div>
+      <div class="card-body fixed-panel-store">
+        <p>
+          <strong>Nombre y apellido:</strong>
+          <%= @client.fullname %>
+        </p>
+
+        <p>
+          <strong>Dni:</strong>
+          <%= @client.dni %>
+        </p>
+
+        <p>
+          <strong>CUIT:</strong>
+          <%= @client.cuit %>
+        </p>
+
+        <p>
+          <strong>Teléfono:</strong>
+          <%= @client.phone %>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <%= @client.email %>
+        </p>
+      </div> 
+      <div class="card-footer text-right">
+        <%= link_to clients_path, class: "btn btn-light mr-1" do %>
+          Volver
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

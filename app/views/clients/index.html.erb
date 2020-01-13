@@ -7,8 +7,8 @@
         <div class="row">
           <div class="col-5">
             <div class="pb-2 mb-2 border-bottom">
-              <%= fa_icon "store-alt" %>
-              Tiendas
+              <%= fa_icon "address-card" %>
+              Clientes
             </div>
           </div>
           <div class="col-1"><%= render_filterrific_spinner %></div>
@@ -36,10 +36,10 @@
           </div>
         </div>
       </div>
-      <div class="card-body" id="stores-list">
+      <div class="card-body" id="clients-list">
         <%= render(
-          partial: 'stores/list',
-          locals: { stores: @stores }
+          partial: 'clients/list',
+          locals: { clients: @clients }
         ) %>
       </div>
     </div>
