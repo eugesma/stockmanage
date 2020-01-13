@@ -1,0 +1,17 @@
+---
+es:
+  activerecord:
+    models:
+      store:
+        one: tienda
+        other: tiendas
+    attributes:
+      store:
+        name: Nombre
+        cuit: CUIT
+        address: Domicilio
+        description: Descripción
+        store_type: Tipo de tienda
+        client_type: Tipo de cliente
+        users_count: Usuarios
+        clients_count: Clientes

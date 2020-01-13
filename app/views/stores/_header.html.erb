@@ -3,7 +3,7 @@
   <li class="nav-item <%= active_action('index') %>">
     <%= link_to stores_path, class: "nav-link" do %>
       <%= fa_icon "store-alt" %>
-      Tiendas
+      <%= Store.model_name.human(count: 2).humanize %>
     <% end %>
   </li>
 
@@ -11,7 +11,7 @@
   <li class="nav-item <%= active_action('new') %>">
     <%= link_to new_store_path, class: "nav-link text-primary" do %>
       <%= fa_icon "plus" %>
-      Nueva
+      <%= t('actions.add', model: Store.model_name.human) %>
     <% end %>
   </li>
 <% end %>
