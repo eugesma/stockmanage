@@ -1,4 +1,4 @@
-<%# <%= render "header" %>
+<% render "header" %>
 
 <% content_for :container do %>-fluid<% end %>
 
@@ -8,13 +8,15 @@
     <div class="card mb-3">
       <div class="card-header">
         <div class="row">
-          <div class="col-md-8">
-            <h5 class="title text-capitalize">
-              <%= Product.model_name.human(count: 2) %>
-            </h5>
+          <div class="col-5">
+            <div class="pb-2 mb-2 border-bottom h5">
+              <%= fa_icon "boxes" %>
+              <%= Product.model_name.human(count: 2).humanize %>
+            </div>
           </div>
-          <div class="col-md-4 text-right">
-              <%= link_to t('actions.add', model: Product.model_name.human), new_product_path, class: 'btn btn-primary' %>
+          <div class="col-1"><%= render_filterrific_spinner %></div>
+          <div class="col-6">
+            <%= render "filter" %>
           </div>
         </div>
       </div>

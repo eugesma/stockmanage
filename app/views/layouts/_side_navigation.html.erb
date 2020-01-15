@@ -12,6 +12,7 @@
 
   <!--Menu list-->
   <div class="list-group list-group-flush">
+    <%# Welcome %>
     <%= link_to root_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('welcome')}" do %>
       <span class="sb-icon">
         <%= fa_icon "home" %> 
@@ -19,13 +20,15 @@
       <span class="sb-title">Inicio</span>
     <% end %>
     
+    <%# Products %>
     <%= link_to products_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('products')}" do %>
       <span class="sb-icon">
-        <%= fa_icon "list" %> 
+        <%= fa_icon "boxes" %>
       </span>
       <span class="sb-title text-capitalize"><%= Product.model_name.human(count: 2) %></span>
     <% end %>
 
+    <%# Clients %>
     <%= link_to clients_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('clients')}" do %>
       <span class="sb-icon">
         <%= fa_icon "address-card" %>
@@ -33,6 +36,7 @@
       <span class="sb-title">Clientes</span>
     <% end %>
 
+    <%# Stores %>
     <%= link_to stores_path, class: "list-group-item list-group-item-action list-custom bg-light #{active_class('stores')}" do %>
       <span class="sb-icon">
         <%= fa_icon "store-alt" %>

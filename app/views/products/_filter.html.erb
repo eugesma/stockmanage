@@ -1,0 +1,20 @@
+<%= form_for_filterrific @filterrific do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="input-group">
+        <%= f.text_field(
+          :search,
+          class: 'form-control border',
+          placeholder: 'Nombre o código',
+          autocomplete: 'off',
+          ) %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <%= button_tag type: 'submit', class: "btn btn-info", id: "register-button", title: 'Filtrar', 
+        data: { toggle: 'tooltip', placement: 'top' }, 'data-disable-with' => "<i class='fa fa-spinner fa-spin'></i>".html_safe do %>
+        <%= fa_icon "filter" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

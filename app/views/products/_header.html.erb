@@ -1,0 +1,17 @@
+<% content_for :page_header do %>
+  <%# Stores %>
+  <li class="nav-item <%= active_action('index') %>">
+    <%= link_to stores_path, class: "nav-link" do %>
+      <%= fa_icon "boxes" %>
+      <%= Product.model_name.human(count: 2).humanize %>
+    <% end %>
+  </li>
+
+  <%# New %>
+  <li class="nav-item <%= active_action('new') %>">
+    <%= link_to new_product_path, class: "nav-link text-primary" do %>
+      <%= fa_icon "plus" %>
+      <%= t('actions.add', model: Product.model_name.human) %>
+    <% end %>
+  </li>
+<% end %>
