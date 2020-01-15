@@ -4,27 +4,42 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.paginate(page: params[:page], per_page: 21)
+    authorize Product
+    @filterrific = initialize_filterrific(
+      Product,
+      params[:filterrific],
+      persistence_id: false,
+      default_filter_params: {sorted_by: 'created_at_desc'},
+      available_filters: [
+        :sorted_by,
+        :search,
+      ],
+    ) or return
+    @products = @filterrific.find.order(created_at: :desc).paginate(page: params[:page], per_page: 20)
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    authorize @product
   end
 
   # GET /products/new
   def new
+    authorize Product
     @product = Product.new
   end
 
   # GET /products/1/edit
   def edit
+    authorize @product
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    authorize @product
 
     respond_to do |format|
       if @product.save
@@ -40,6 +55,8 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    authorize @product
+
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -54,6 +71,8 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    authorize @product
+    
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }

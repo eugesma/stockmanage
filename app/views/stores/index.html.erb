@@ -1,4 +1,7 @@
 <%= render "header"%>
+
+<% content_for :container do %>-fluid<% end %>
+
 <!--Listado-->
 <div class="row">
   <div class="col-12">
@@ -6,7 +9,7 @@
       <div class="card-header info">
         <div class="row">
           <div class="col-5">
-            <div class="pb-2 mb-2 border-bottom">
+            <div class="pb-2 mb-2 border-bottom h5">
               <%= fa_icon "store-alt" %>
               <%= Store.model_name.human(count: 2).humanize %>
             </div>

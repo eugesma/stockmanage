@@ -7,19 +7,20 @@ Rails.application.routes.draw do
     
     #Products
     resources :products
-      
+
     # Clients
     resources :clients do
       member do
         get "delete"
       end
     end
-    
+
     # Stores
     resources :stores do
       member do
         get "delete"
       end
     end
+    
   end
 end

@@ -1,42 +1,46 @@
 
 <% if  defined?(object) and object.class.is_a?(Class) %>
 
-    <div class="d-flex justify-content-end">
-        <!-- Mostrar -->
-        <% if defined?(show) and show %>
-        
-            <%= link_to send("#{object.class.name.downcase}_path", object), 
-                class: 'btn btn-sm btn-secondary mr-1 ml-1', 
-                title: t("actions.tooltip.show"), 
-                data: { toggle: 'tooltip', placement: 'top' } do %>
-                
-                <%= fa_icon "eye" %>
-            <% end %>
-
+  <div class="d-flex justify-content-end">
+    <!-- Show -->
+    <% if defined?(show) and show %>
+      <% if policy(object).show?%>
+        <%= link_to polymorphic_path(object), 
+          class: 'btn btn-sm btn-secondary mr-1 ml-1', 
+          title: t("actions.tooltip.show"), 
+          data: { toggle: 'tooltip', placement: 'top' } do %>
+          
+          <%= fa_icon "eye" %>
         <% end %>
+      <% end %>
+    <% end %>
 
-        <!-- Editar -->
-        <% if defined?(edit) and edit %>
-            <%= link_to send("edit_#{object.class.name.downcase}_path", object), 
-                class: 'btn btn-sm btn-warning mr-1 ml-1', 
-                title: t("actions.tooltip.edit"), 
-                data: { toggle: 'tooltip', placement: 'top'} do %> 
+    <!-- Edit -->
+    <% if defined?(edit) and edit %>
+      <% if policy(object).edit? %>
+        <%= link_to edit_polymorphic_path(object), 
+          class: 'btn btn-sm btn-warning mr-1 ml-1', 
+          title: t("actions.tooltip.edit"), 
+          data: { toggle: 'tooltip', placement: 'top'} do %> 
 
-                <%= fa_icon "pen" %>
-            <% end %>
+          <%= fa_icon "pen" %>
         <% end %>
+      <% end %>
+    <% end %>
 
-        <!-- Eliminar -->
-        <% if defined?(destroy) and destroy %>
-            <%= link_to send("#{object.class.name.downcase}_path", object), 
-                method: 'delete', 
-                class: 'btn btn-sm btn-danger mr-1 ml-1', 
-                remote: true, 
-                title: t("actions.tooltip.delete"), 
-                data: { toggle: 'tooltip', placement: 'top', confirm: "Are you sure?" } do %>
+    <!-- Destroy -->
+    <% if defined?(destroy) and destroy %>
+      <% if policy(object).destroy? %>
+        <%= link_to polymorphic_path(object),
+          method: :delete, 
+          class: 'btn btn-sm btn-danger mr-1 ml-1', 
+          remote: true, 
+          title: t("actions.tooltip.delete"), 
+          data: { toggle: 'tooltip', placement: 'top', confirm: "Are you sure?" } do %>
 
-                <%= fa_icon "trash" %> 
-            <% end %>    
-        <% end %>
-    </div>
+          <%= fa_icon "trash" %> 
+        <% end %>    
+      <% end %>
+    <% end %>
+  </div>
 <% end %>

@@ -14,15 +14,22 @@ module ApplicationHelper
     end
   end
 
+  # Return "active" if its the current controller
   def active_class(link_path)
     if params[:controller] == link_path
       return 'active'
     end 
   end
 
+  # Return "active" if its the current action
   def active_action(link_path)
     if params[:action] == link_path
       return 'active'
     end 
+  end
+
+  # Helper to show pretty number
+  def format_number(a_number)
+    number_with_delimiter(number_with_precision(a_number, precision: 0, strip_insignificant_zeros: true), :delimiter => ".", :separator => ",")
   end
 end

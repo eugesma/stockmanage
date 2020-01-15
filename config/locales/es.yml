@@ -5,6 +5,7 @@ es:
     add: Agregar %{model}
     new: Nuevo %{model}
     create: Crear %{model}
+    show: "Viendo %{model}"
     edit: Editar %{model}
     save: Guardar
     back: Volver

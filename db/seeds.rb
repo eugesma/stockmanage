@@ -8,7 +8,8 @@
 
 User.create([
   { email: "eugesma@gmail.com", password: '12345678' }, 
-  { email: "paul.18.sma@gmail.com", password: '12345678' }
+  { email: "paul.18.sma@gmail.com", password: '12345678' },
+  { email: "damianediez@gmail.com", password: '12345678' }
 ])
 
 User.first.add_role :admin
