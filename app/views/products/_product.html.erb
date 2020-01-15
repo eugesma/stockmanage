@@ -1,31 +1,31 @@
 <tr id="product_<%= product.id %>">  
-  <!-- Nombre -->
+  <!-- Name -->
   <td>
     <%= product.name %>
   </td>
 
-  <!-- Código -->
+  <!-- Code -->
   <td>
     <%= product.code %>
   </td>
   
-  <!-- Precio costo -->
+  <!-- Cost price -->
   <td>
     <%= product.cost_price %>
   </td>
   
-  <!-- Precio venta -->
+  <!-- Sale price -->
   <td>
     <%= product.sale_price %>
   </td>
   
-  <!-- Precio tienda -->
+  <!-- Store price -->
   <td>
     <%= product.store_price %>
   </td>
   
 
-  <!-- botones de acción -->
+  <!-- Action buttons -->
   <td class="mx-auto">
     <%= render(
             partial: 'shared/action_buttons',
