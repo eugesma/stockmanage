@@ -1,24 +1,17 @@
 <%= render "header" %>
 
+<%= content_for :container do %>-fluid<% end %>
+
 <div class="row">
-  <div class="col-6 mx-auto">
+  <div class="col-12">
     <div class="card">
       <div class="card-header bg-primary text-white">        
         <h5 class="title">
-          <%= fa_icon "plus" %> Nuevo cliente
+          <%= fa_icon "plus" %>
+          <%= t('actions.new' , model: Client.model_name.human) %>
         </h5>
       </div>
-      <div class="card-body">
-        <%= render 'form', client: @client %>
-      </div> 
-      <div class="card-footer text-right">
-        <%= link_to clients_path, class: "btn btn-light mr-1" do %>
-          Volver
-        <% end %>
-        <button type='submit' name='commit' class='btn btn-primary mr-1' form='new_client' value='Crear'>
-          <%= fa_icon "check" %> Crear
-        </button>
-      </div>
+      <%= render 'form', client: @client %>
     </div>
   </div>
 </div>

@@ -30,29 +30,15 @@
 
   <!-- Action buttons -->
   <td class="mx-auto">
-    <div class="d-flex justify-content-end">
-      <!-- Show -->
-      <% if policy(client).show? %>
-        <%= link_to client_path(client), class: 'btn btn-sm btn-secondary mr-1 ml-1', 
-          title: 'Ver', data: { toggle: 'tooltip', placement: 'top' } do %>
-          <%= fa_icon "eye" %>
-        <% end %>
-      <% end %>
-
-      <!-- Edit -->
-      <% if policy(client).edit? %>
-        <%= link_to edit_client_path(client), class: 'btn btn-sm btn-warning mr-1 ml-1', title: 'Editar', data: { toggle: 'tooltip', placement: 'top'} do %>
-          <%= fa_icon "pen" %>
-        <% end %>
-      <% end %>
-
-      <!-- Delete -->
-      <% if policy(client).destroy? %>
-        <%= link_to delete_client_path(client), remote: true, class: 'btn btn-sm btn-danger mr-1 ml-1',
-        title: 'Eliminar', data: { toggle: 'tooltip', placement: 'top' } do %>
-          <%= fa_icon "trash" %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render(
+            partial: 'shared/action_buttons',
+            locals:{ 
+                object: client, 
+                show: true, 
+                edit: true, 
+                destroy: true
+            }
+        ) 
+    %>
   </td>
 </tr>

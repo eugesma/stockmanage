@@ -2,20 +2,34 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%# Name %>
-    <%= f.input :fullname, label: "Nombre y apellido" %>
+  <div class="card-body">
+    <div class="form-inputs">
+      <div class="row">
+        <div class="col-6">
+          <%# Name %>
+          <%= f.input :fullname, label: "Nombre y apellido" %>
 
-    <%# DNI %>
-    <%= f.input :dni, label: "DNI" %>
+          <%# DNI %>
+          <%= f.input :dni, label: "DNI" %>
 
-    <%# CUIT %>
-    <%= f.input :cuit, label: "CUIT" %>
+          <%# CUIT %>
+          <%= f.input :cuit, label: "CUIT" %>
+        </div>
+        <div class="col-6">
+          <%# Phone %>
+          <%= f.input :phone, label: "Teléfono" %>
 
-    <%# Phone %>
-    <%= f.input :phone, label: "Teléfono" %>
+          <%# Email %>
+          <%= f.input :email, label: "Email" %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <%# Email %>
-    <%= f.input :email, label: "Email" %>
+  <div class="card-footer">
+    <div class="form-actions text-right">
+      <%= link_to t('actions.back'), clients_path, class: 'btn btn-light mr-2' %>
+      <%= f.button :submit, class: 'btn btn-success' %>
+    </div>
   </div>
 <% end %>

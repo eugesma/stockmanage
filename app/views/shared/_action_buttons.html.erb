@@ -30,13 +30,12 @@
 
     <!-- Destroy -->
     <% if defined?(destroy) and destroy %>
-      <% if policy(object).destroy? %>
-        <%= link_to polymorphic_path(object),
-          method: :delete, 
+      <% if policy(object).delete? %>
+        <%= link_to polymorphic_path([:delete, object]),
           class: 'btn btn-sm btn-danger mr-1 ml-1', 
           remote: true, 
           title: t("actions.tooltip.delete"),
-          data: { toggle: 'tooltip', placement: 'top', confirm: "Are you sure?" } do %>
+          data: { toggle: 'tooltip', placement: 'top' } do %>
 
           <%= fa_icon "trash" %> 
         <% end %>    

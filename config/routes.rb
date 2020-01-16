@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     devise_for :users
     
     #Products
-    resources :products
+    resources :products do
+      member do
+        get "delete"
+      end
+    end
 
     # Clients
     resources :clients do

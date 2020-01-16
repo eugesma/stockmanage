@@ -35,29 +35,15 @@
 
   <!-- Action buttons -->
   <td class="mx-auto">
-    <div class="d-flex justify-content-end">
-      <!-- Show -->
-      <% if policy(store).show? %>
-        <%= link_to store_path(store), class: 'btn btn-sm btn-secondary mr-1 ml-1', 
-          title: 'Ver', data: { toggle: 'tooltip', placement: 'top' } do %>
-          <%= fa_icon "eye" %>
-        <% end %>
-      <% end %>
-
-      <!-- Edit -->
-      <% if policy(store).edit? %>
-        <%= link_to edit_store_path(store), class: 'btn btn-sm btn-warning mr-1 ml-1', title: 'Editar', data: { toggle: 'tooltip', placement: 'top'} do %>
-          <%= fa_icon "pen" %>
-        <% end %>
-      <% end %>
-
-      <!-- Delete -->
-      <% if policy(store).destroy? %>
-        <%= link_to delete_store_path(store), remote: true, class: 'btn btn-sm btn-danger mr-1 ml-1',
-        title: 'Eliminar', data: { toggle: 'tooltip', placement: 'top' } do %>
-          <%= fa_icon "trash" %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render(
+            partial: 'shared/action_buttons',
+            locals:{ 
+                object: store, 
+                show: true, 
+                edit: true, 
+                destroy: true
+            }
+        ) 
+    %>
   </td>
 </tr>

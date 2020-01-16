@@ -1,0 +1,14 @@
+---
+es:
+  activerecord:
+    models:
+      client:
+        one: cliente
+        other: clientes
+    attributes:
+      product:
+        firstname: Nombre y apellido
+        code: Código
+        cost_price: Precio costo
+        sale_price: Precio venta
+        store_price: Precio tienda
