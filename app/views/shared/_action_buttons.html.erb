@@ -18,9 +18,9 @@
     <!-- Edit -->
     <% if defined?(edit) and edit %>
       <% if policy(object).edit? %>
-        <%= link_to edit_polymorphic_path(object), 
-          class: 'btn btn-sm btn-warning mr-1 ml-1', 
-          title: t("actions.tooltip.edit"), 
+        <%= link_to edit_polymorphic_path(object),
+          class: 'btn btn-sm btn-warning mr-1 ml-1',
+          title: t("actions.tooltip.edit"),
           data: { toggle: 'tooltip', placement: 'top'} do %> 
 
           <%= fa_icon "pen" %>
@@ -35,7 +35,7 @@
           method: :delete, 
           class: 'btn btn-sm btn-danger mr-1 ml-1', 
           remote: true, 
-          title: t("actions.tooltip.delete"), 
+          title: t("actions.tooltip.delete"),
           data: { toggle: 'tooltip', placement: 'top', confirm: "Are you sure?" } do %>
 
           <%= fa_icon "trash" %> 

@@ -14,3 +14,5 @@ es:
       show: Ver
       edit: Editar
       delete: Eliminar
+  placeholder: "%{model1} o %{model2}"
+  trash_message: "Esta seguro que desea enviar a la papelera la tienda %{model}%?"

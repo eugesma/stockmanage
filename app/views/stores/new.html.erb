@@ -8,17 +8,7 @@
           <%= fa_icon "plus" %> Nueva tienda
         </h5>
       </div>
-      <div class="card-body fixed-panel-store">
-        <%= render 'form', store: @store %>
-      </div> 
-      <div class="card-footer text-right">
-        <%= link_to stores_path, class: "btn btn-light mr-1" do %>
-          Volver
-        <% end %>
-        <button type='submit' name='commit' class='btn btn-primary mr-1' form='new_store' value='Crear'>
-          <%= fa_icon "check" %> Crear
-        </button>
-      </div>
+      <%= render 'form', store: @store %>
     </div>
   </div>
 </div>

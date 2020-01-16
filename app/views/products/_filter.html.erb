@@ -5,7 +5,7 @@
         <%= f.text_field(
           :search,
           class: 'form-control border',
-          placeholder: 'Nombre o código',
+          placeholder: t('placeholder' , model1: Product.human_attribute_name(:name), model2: Product.human_attribute_name(:code)),
           autocomplete: 'off',
           ) %>
       </div>

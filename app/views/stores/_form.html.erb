@@ -2,27 +2,41 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%# Name %>
-    <%= f.input :name, label: "Nombre" %>
+  <div class="card-body">
+    <div class="form-inputs">
+      <%# Name %>
+      <%= f.input :name, label: "Nombre" %>
 
-    <%# Store type %>
-    <div class="form-group">
-      <label class="form-control-label">Tipo</label>
-      <%= f.collection_select :store_type_id, @store_types, :id, :name, {} , 
-        { class: "selectpicker form-control", size: 6, :data => {width: "100%"},
-        "title"=>"Seleccionar tipo",
-        }
-      %>
+      <%# Store type %>
+      <div class="form-group">
+        <%= f.input :store_type_id,
+          collection: @store_types,
+          required: true,
+          :input_html => {
+            title: "Seleccionar tipo",
+            include_blank: false,
+            class: 'selectpicker',
+            "data-width"=>"100%",
+            "data-size"=>"10",
+          } 
+        %>
+      </div>
+
+      <%# CUIT %>
+      <%= f.input :cuit %>
+
+      <%# Address %>
+      <%= f.input :address %>
+
+      <%# Description %>
+      <%= f.input :description %>
     </div>
+  </div>
 
-    <%# CUIT %>
-    <%= f.input :cuit, label: "CUIT" %>
-
-    <%# Address %>
-    <%= f.input :address, label: "Domicilio" %>
-
-    <%# Description %>
-    <%= f.input :description, label: "Descripción" %>
+  <div class="card-footer">
+    <div class="form-actions text-right">
+      <%= link_to t('actions.back'), products_path, class: 'btn btn-light mr-2' %>
+      <%= f.button :submit, class: 'btn btn-success' %>
+    </div>
   </div>
 <% end %>

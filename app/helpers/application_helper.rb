@@ -32,4 +32,12 @@ module ApplicationHelper
   def format_number(a_number)
     number_with_delimiter(number_with_precision(a_number, precision: 0, strip_insignificant_zeros: true), :delimiter => ".", :separator => ",")
   end
+
+  def icon_action(an_action)
+    if an_action == "new"
+      return "check"
+    elsif an_action = "edit"
+      return "save"
+    end 
+  end
 end

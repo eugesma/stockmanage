@@ -11,7 +11,10 @@ es:
         cuit: CUIT
         address: Domicilio
         description: Descripción
-        store_type: Tipo de tienda
+        store_type_id: Tipo de tienda
         client_type: Tipo de cliente
         users_count: Usuarios
         clients_count: Clientes
+        created_at: Creado
+        updated_at: Actualizado
+        type: Tipo

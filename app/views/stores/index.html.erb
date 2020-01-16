@@ -23,7 +23,7 @@
                     <%= f.text_field(
                       :search,
                       class: 'form-control border',
-                      placeholder: t(activerecord.attributes.store.name),
+                      placeholder: Store.human_attribute_name(:name),
                       autocomplete: 'off',
                       ) %>
                   </div>
