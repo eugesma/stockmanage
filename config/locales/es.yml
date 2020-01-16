@@ -9,6 +9,8 @@ es:
     edit: Editar %{model}
     save: Guardar
     back: Volver
+    trash: Enviar a la papelera
+    confirm: Confirmar
     
     tooltip:
       show: Ver
@@ -16,4 +18,3 @@ es:
       delete: Eliminar
       filter: Filtrar
   placeholder: "%{model1} o %{model2}"
-  trash_message: "Esta seguro que desea enviar a la papelera la tienda %{model}%?"

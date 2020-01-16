@@ -4,15 +4,15 @@ $('.modal-header').addClass('text-white');
 
 
 // Add the dialog title
-$('#dialog h5').html("<i class='fa fa-trash'></i>  Enviar a papelera");
+$('#dialog h5').html("<i class='fa fa-trash'></i>  <%= t("actions.trash") %>");
 
 // Render the edit form
-$('.modal-body').html('Esta seguro que desea enviar a la papelera al cliente <%= @client.fullname %>?');
+$('.modal-body').html("<%= t("messages.client.trash", fullname: @client.fullname) %>");
 
 // Add form button
 $('.modal-footer').html(
-  "<button type='button' class='btn btn-default pull-left' data-dismiss='modal'>Volver</button>"+
-  "<a data-remote='true' data-method='delete' href='/clients/<%= @client.id %>>' data-dismiss='modal' class='btn commit btn-danger pull-right' rel='nofollow'>Confirmar</a>"
+  "<button type='button' class='btn btn-default pull-left' data-dismiss='modal'><%= t("actions.back") %></button>"+
+  "<a data-remote='true' data-method='delete' href='/clients/<%= @client.id %>>' data-dismiss='modal' class='btn commit btn-danger pull-right' rel='nofollow'><%= t("actions.confirm") %></a>"
 );
 
 // Show the dynamic dialog

@@ -18,3 +18,6 @@ es:
         created_at: Creado
         updated_at: Actualizado
         type: Tipo
+  messages:
+    store:
+      trash: Esta seguro que desea enviar a la papelera la tienda %{name}?

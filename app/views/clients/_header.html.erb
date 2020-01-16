@@ -11,7 +11,7 @@
   <li class="nav-item <%= active_action('new') %>">
     <%= link_to new_client_path, class: "nav-link text-primary" do %>
       <%= fa_icon "plus" %>
-      Nuevo
+      <%= t("actions.add", model: Client.model_name.human) %>
     <% end %>
   </li>
 <% end %>

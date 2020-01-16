@@ -12,3 +12,6 @@ es:
         cost_price: Precio costo
         sale_price: Precio venta
         store_price: Precio tienda
+  messages:
+    product:
+      trash: Esta seguro que desea enviar a la papelera el producto %{name}?

@@ -3,11 +3,11 @@
     <table class="table table-hover table-sm">
       <thead>
         <tr>
-          <th>Cliente</th>
-          <th>Email</th>
+          <th><%= Client.human_attribute_name(:fullname) %></th>
+          <th><%= Client.human_attribute_name(:email) %></th>
           <th>Compras</th>
-          <th>Creado <%= fa_icon "calendar" %></th>
-          <th>Modificado <%= fa_icon "calendar" %></th>
+          <th><%= Client.human_attribute_name(:created_at) %> <%= fa_icon "calendar" %></th>
+          <th><%= Client.human_attribute_name(:updated_at) %> <%= fa_icon "calendar" %></th>
           <th></th>
         </tr>
       </thead>

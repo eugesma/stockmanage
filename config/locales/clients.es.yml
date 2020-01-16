@@ -5,10 +5,13 @@ es:
       client:
         one: cliente
         other: clientes
+        trash_message: "Esta seguro que desea enviar a la papelera al cliente %{model}%"
     attributes:
-      product:
-        firstname: Nombre y apellido
-        code: Código
-        cost_price: Precio costo
-        sale_price: Precio venta
-        store_price: Precio tienda
+      client:
+        fullname: Apellido y nombre
+        email: Email
+        created_at: Creado
+        updated_at: Actualizado
+  messages:
+    client:
+      trash: Esta seguro que desea enviar a la papelera al cliente %{fullname}?
