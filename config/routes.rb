@@ -25,6 +25,5 @@ Rails.application.routes.draw do
         get "delete"
       end
     end
-    
   end
 end
